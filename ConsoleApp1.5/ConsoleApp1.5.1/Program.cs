@@ -1,0 +1,49 @@
+﻿using System;
+using System.IO;
+
+namespace App1
+{
+    class Program
+    {
+        private static int getIndexMinElement(int[] numbers)
+        {
+            int minIndex = 0;
+            
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[minIndex] > numbers[i])
+                {
+                    minIndex = i;
+                }
+            }
+
+            return minIndex;
+        }
+
+        private static int getMulNumbersAfter(int[] numbers, int minIndex)
+        {
+            int result = 1;
+            
+            for (int i = minIndex + 1; i < numbers.Length; i++)
+            {
+                result *= numbers[i];
+            }
+            
+
+            return result;
+        }
+        
+        public static void Main()
+        {
+            string path = @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.5\ConsoleApp1.5.1\bin\Debug\net7.0\numsTask1.txt";
+            string[] numbersStr = File.ReadAllText(path).Split(';');
+
+            int[] numbers = Array.ConvertAll(numbersStr, int.Parse);
+
+            int minIndex = getIndexMinElement(numbers);
+            int result = getMulNumbersAfter(numbers, minIndex);
+
+            Console.WriteLine("Произведение элементов после минимального: " + result);
+        }
+    }
+}

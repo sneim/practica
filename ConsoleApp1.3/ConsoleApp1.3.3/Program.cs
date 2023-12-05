@@ -1,31 +1,24 @@
 ﻿using System;
 using System.IO;
 
-namespace App3
+namespace App1
 {
     class Program
     {
         public static void Main()
         {
-            string[] input =
-                File.ReadAllLines(@"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.3\ConsoleApp1.3.3\bin\Debug\net7.0\vladick movemaiker.txt");
+            string path = @"D:\c#\ConsoleApplication1\ConsoleApplication1\bin\Debug\Net.07\input.txt"; // полный путь к файлу
+            string[] input = File.ReadAllLines(path);
+            numbersInput = new int[input.Length];
 
-            int[] numbersInput;
-
-            string[] b = input[0].Split(",");
-
-            numbersInput = new int[b.Length];
-
-            for (int i = 0; i < b.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                numbersInput[i] = int.Parse(b[i]);
+                numbersInput[i] = int.Parse(input[i]);
             }
 
-            foreach (var a in numbersInput)
-            {
-                Console.WriteLine(a);
-            }
+            int maxVolume = getMaxVolume(ref numbersInput);
 
+            Console.WriteLine($"Максимальный возможный объем: {maxVolume}");
         }
     }
 }
