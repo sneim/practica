@@ -1,24 +1,41 @@
 ﻿using System;
 using System.IO;
 
-namespace App1
+class Program
 {
-    class Program
+    public static void Main()
     {
-        public static void Main()
+        string path = @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.3\ConsoleApp1.3.3\bin\Debug\net7.0\input.txt";
+        using (StreamReader stream = new StreamReader(path))
         {
-            string path = @"D:\c#\ConsoleApplication1\ConsoleApplication1\bin\Debug\Net.07\input.txt"; // полный путь к файлу
-            string[] input = File.ReadAllLines(path);
-            numbersInput = new int[input.Length];
-
-            for (int i = 0; i < input.Length; i++)
+            string s = stream.ReadLine();
+            string[] array = s.Split(' ');
+            int resultVolum = 0;
+            for (int i = array.Length - 1; i >= 0; i--)
             {
-                numbersInput[i] = int.Parse(input[i]);
+                int coup = Convert.ToInt32(array[i]);
+                int min = coup;
+                int volum = 0;
+                for (int j = 0; j < array.Length; j++)
+                {
+                    int coupSec = Convert.ToInt32(array[j]);
+                    if (coup < coupSec)
+                    {
+                        min = coup;
+                    }
+                    else
+                    {
+                        min = coupSec;
+                    }
+                    volum = min * (i - j);
+                    if (volum > resultVolum)
+                    {
+                        resultVolum = volum;
+                    }
+                }
             }
 
-            int maxVolume = getMaxVolume(ref numbersInput);
-
-            Console.WriteLine($"Максимальный возможный объем: {maxVolume}");
+            Console.WriteLine($"Максимальный возможный объем: {resultVolum}");
         }
     }
 }
