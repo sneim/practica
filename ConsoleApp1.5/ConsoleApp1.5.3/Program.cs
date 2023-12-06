@@ -31,13 +31,16 @@ namespace App1
 
             return result;
         }
-        
+
         public static void Main()
         {
             string path =
                 @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.5\ConsoleApp1.5.3\bin\Debug\net7.0\numsTask3.txt";
-            string[] numbers = File.ReadAllText(path).Split(' ');
+            StreamReader readTask3 = new StreamReader(path);
+            string[] numbers = readTask3.ReadLine().Split(' ');
 
+            readTask3.Close();
+            
             int[] nums = Array.ConvertAll(numbers, int.Parse);
 
             int minIndex = FindMinimumIndex(nums);

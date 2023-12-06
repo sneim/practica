@@ -25,8 +25,10 @@ namespace App1
         {
             string path =
                 @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.5\ConsoleApp1.5.2\bin\Debug\net7.0\numsTask2.txt";
-            string[] numbers = File.ReadAllText(path).Split(';');
-            
+            StreamReader readTask2 = new StreamReader(path);
+            string[] numbers = readTask2.ReadLine().Split(';');
+
+            readTask2.Close();
             float[] nums = Array.ConvertAll(numbers, float.Parse);
 
             Array.Sort(nums);

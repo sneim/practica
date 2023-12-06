@@ -1,49 +1,39 @@
 ﻿using System;
-using System.IO;
-using System.Globalization;
 
-
-namespace App3
+namespace App1
 {
     class Program
     {
         public static void Main()
         {
-            string path =
-                @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.4\ConsoleApp1.4.3\bin\Debug\net7.0\numsTask3.txt";
-            string[] stringNumbers = File.ReadAllText(path).Split(',');
+            string[] path = File.ReadAllLines(@"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.4\ConsoleApp1.4.3\bin\Debug\net7.0\numsTask3.txt");
+            string[] nums = path[0].Split(',');
+            
+            int max = int.MinValue;
+            int min = int.MaxValue;
 
-            int minNumber = int.Parse(stringNumbers[0]);
-            int maxNumber = int.Parse(stringNumbers[0]);
-
-            if (maxNumber != 0) 
+            foreach (string number in nums)
             {
-                foreach (string stringNumber in stringNumbers)
+                int num = int.Parse(number);
+
+                if (num == 0)
                 {
-                    int num = int.Parse(stringNumber, CultureInfo.InvariantCulture);
-
-                    if (num == 0)
-                    {
-                        break;
-                    }
-
-                    if (minNumber > num)
-                    {
-                        minNumber = num;
-                    }
-
-                    if (maxNumber < num)
-                    {
-                        maxNumber = num;
-                    }
+                    break;
                 }
 
-                Console.WriteLine($"Отношение минимального к максимальному числу {(float)minNumber / maxNumber}");
+                if (num > max)
+                {
+                    max = num;
+                }
+
+                if (num < min)
+                {
+                    min = num;
+                }
             }
-            else
-            {
-                Console.WriteLine("Первое число это 0");
-            }
+
+            Console.WriteLine($"Отношение минимального к максимальному числу {(float)min / max}");
+
         }
     }
 }

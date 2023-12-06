@@ -36,9 +36,12 @@ namespace App1
         public static void Main()
         {
             string path = @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.5\ConsoleApp1.5.1\bin\Debug\net7.0\numsTask1.txt";
-            string[] numbersStr = File.ReadAllText(path).Split(';');
+            StreamReader readTask1 = new StreamReader(path);
+            string[] input = readTask1.ReadLine().Split(';');
 
-            int[] numbers = Array.ConvertAll(numbersStr, int.Parse);
+            readTask1.Close();
+            
+            int[] numbers = Array.ConvertAll(input, int.Parse);
 
             int minIndex = getIndexMinElement(numbers);
             int result = getMulNumbersAfter(numbers, minIndex);

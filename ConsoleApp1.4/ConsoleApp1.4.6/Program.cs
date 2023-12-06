@@ -1,7 +1,6 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 
-namespace App6
+namespace App1
 {
     class Program
     {
@@ -14,11 +13,11 @@ namespace App6
             
             if ((((b - 2) / 2.5) <= a && ((b - 2) / -2.5) >= a ) && (b >= -3 && b <= 2)) 
             {
-                Console.WriteLine("Точка входит d область");
+                Console.WriteLine("Точка с координатами (" + a + "; " + b + ") принадлежит заштрихованной области.");
             }
             else
             {
-                Console.WriteLine("Точка не входит в область");
+                Console.WriteLine("Точка с координатами (" + a + "; " + b + ") не принадлежит заштрихованной области.");
             }
         }
     }
