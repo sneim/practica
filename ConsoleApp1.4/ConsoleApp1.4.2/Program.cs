@@ -16,7 +16,7 @@ class Program
 
             if (num == 0)
             {
-                break; // Выход из цикла, если встретилось число 0
+                break; 
             }
 
             if (num > 0)

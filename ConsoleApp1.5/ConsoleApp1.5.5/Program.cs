@@ -5,7 +5,7 @@ namespace App1
 {
     class Program
     {
-        private static int getIndexMaxElement(int[] numbers)
+        private static int FindMaximumElement(int[] numbers)
         {
             int maxIndex = 0;
             for (int i = 0; i < numbers.Length; i++)
@@ -51,7 +51,7 @@ namespace App1
             
             int[] numbers = Array.ConvertAll(input, int.Parse);
             
-            int maxIndexNum = getIndexMaxElement(numbers);
+            int maxIndexNum = FindMaximumElement(numbers);
             
             int minIndexNum = FindMinimumIndex(numbers);
             
