@@ -5,7 +5,7 @@ class Program
 {
     static void Main()
     {
-        string path = @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.4\ConsoleApp1.4.2\bin\Debug\net7.0\numsTask2.txt";
+        string path = @"numsTask2.txt";
         string[] numbers = File.ReadAllText(path).Split(';');
 
         float sum = 0;
