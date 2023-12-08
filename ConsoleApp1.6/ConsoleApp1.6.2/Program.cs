@@ -7,7 +7,7 @@ namespace App1
     {
         public static void Main(string[] args)
         {
-            string path = @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.6\ConsoleApp1.6.2\bin\Debug\net7.0\numsTask2.txt";
+            string path = @"numsTask2.txt";
             StreamReader readInput = new StreamReader(path);
             string words = readInput.ReadLine();
             
