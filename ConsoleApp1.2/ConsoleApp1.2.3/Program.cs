@@ -6,6 +6,7 @@ namespace App2
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите размер матрицы: ");
             int n = Convert.ToInt32(Console.ReadLine());
             int[,] matrix = new int[n, n];
             
