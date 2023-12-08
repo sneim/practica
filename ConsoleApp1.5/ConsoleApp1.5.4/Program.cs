@@ -36,7 +36,7 @@ namespace App1
 
         public static void Main()
         {
-            string path = @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.5\ConsoleApp1.5.4\bin\Debug\net7.0\numsTask4.txt";
+            string path = @"numsTask4.txt";
             StreamReader readTask4 = new StreamReader(path);
             string[] input = readTask4.ReadLine().Split(' ');
 
