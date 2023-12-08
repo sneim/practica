@@ -5,7 +5,7 @@ class Program
 {
     public static void Main()
     {
-        string path = @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.3\ConsoleApp1.3.3\bin\Debug\net7.0\input.txt";
+        string path = @"input.txt";
         using (StreamReader stream = new StreamReader(path))
         {
             string s = stream.ReadLine();
