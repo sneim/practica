@@ -42,6 +42,7 @@ namespace App1
 
             Random r = new Random();
             int min = -35, max = 0, numMonth = 0;
+            
             foreach (var month in temps)
             {
                 for (int i = 0; i < month.Value.Length; i++)
