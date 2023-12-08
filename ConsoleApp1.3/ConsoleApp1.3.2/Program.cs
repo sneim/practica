@@ -8,7 +8,7 @@ namespace App1
     {
         public static void Main()        
         {
-            string input = @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.3\ConsoleApp1.3.2\bin\Debug\net7.0\nums.txt";            
+            string input = @"nums.txt";            
             
             string[] pathInput = File.ReadAllLines(input);
             
