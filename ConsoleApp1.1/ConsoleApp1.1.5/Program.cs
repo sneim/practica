@@ -9,6 +9,7 @@ namespace App1
             Console.WriteLine("Введите предложение: ");
             string input = Console.ReadLine();
             int wordAmount = 1; 
+            
             foreach (var c in input)
             {
                 if (c == ' ') 
