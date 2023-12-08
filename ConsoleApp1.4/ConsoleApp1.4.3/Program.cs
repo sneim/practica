@@ -6,7 +6,7 @@ namespace App1
     {
         public static void Main()
         {
-            string[] path = File.ReadAllLines(@"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.4\ConsoleApp1.4.3\bin\Debug\net7.0\numsTask3.txt");
+            string[] path = File.ReadAllLines(@"numsTask3.txt");
             string[] nums = path[0].Split(',');
             
             int max = int.MinValue;
