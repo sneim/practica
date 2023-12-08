@@ -6,7 +6,7 @@ namespace App4
     {
         static void Main()
         {
-            string path = @"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.4\ConsoleApp1.4.4\bin\Debug\net7.0\numsTask4.txt";
+            string path = @"numsTask4.txt";
             string[] lines = File.ReadAllLines(path);
 
             int count = 0;
