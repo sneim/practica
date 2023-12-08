@@ -7,7 +7,7 @@ namespace App3
     {
         public static void Main()
         {
-            string[] input = File.ReadAllLines(@"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.3\ConsoleApp1.3.1\bin\Debug\net7.0\input.txt");
+            string[] input = File.ReadAllLines(@"input.txt");
             
             string[] chosenNumbers = input[0].Split(" ");           
             int str = int.Parse(input[1]);
@@ -39,7 +39,7 @@ namespace App3
                     
                 }
             }
-            File.WriteAllLines(@"C:\Users\gr622_nemol\Desktop\practica\ConsoleApp1.3\ConsoleApp1.3.1\bin\Debug\net7.0\output.txt", result.ToArray());
+            File.WriteAllLines(@"output.txt", result.ToArray());
 
         }
     }
